@@ -1,4 +1,4 @@
-from helga import command
+from helga.plugins import command
 
 
 @command('mud')
