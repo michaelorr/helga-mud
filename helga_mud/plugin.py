@@ -3,4 +3,4 @@ from helga.plugins import command
 
 @command('mud')
 def mud():
-    pass
+    return 'this plugin is still under development'
