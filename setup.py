@@ -26,7 +26,7 @@ setup(
     license='LICENSE',
     packages=find_packages(),
     include_package_data=True,
-    py_modules=['helga-mud.plugin'],
+    py_modules=['helga_mud.plugin'],
     zip_safe=True,
     install_requirements=requirements,
     entry_points = dict(
