@@ -1,28 +1,24 @@
-import os
+from pip.req import parse_requirements
 from setuptools import setup, find_packages
 
 from helga_mud import __version__ as version
 
-requirements = []
-with open(
-    os.path.join(os.path.dirname(__file__), 'requirements.txt'), 'r'
-) as in_:
-    requirements = in_.readlines()
+requirements = [
+    str(req.req) for req in parse_requirements('requirements.txt')
+]
 
 
 setup(
-    name="helga-mud",
+    name='helga-mud',
     version=version,
     description=(''),
     classifiers=[
-        'Development Status :: 1 - Beta',
-        'Environment :: IRC',
-        'Intended Audience :: Twisted Developers, IRC Bot Developers',
+        'Development Status :: 4 - Beta',
         'License :: OSI Approved :: GNU General Public License v3 (GPLv3)',
         'Operating System :: OS Independent',
         'Programming Language :: Python',
         'Topic :: Software Development :: Libraries :: Python Modules',
-        'Topic :: IRC Bots'],
+        'Topic :: Communications :: Chat :: Internet Relay Chat'],
     keywords='irc bot mud',
     author='Michael Orr',
     author_email='michael@orr.co',
@@ -30,7 +26,7 @@ setup(
     license='LICENSE',
     packages=find_packages(),
     include_package_data=True,
-    py_modules=['helga-mud'],
+    py_modules=['helga-mud.plugin'],
     zip_safe=True,
     install_requirements=requirements,
     entry_points = dict(
